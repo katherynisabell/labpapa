@@ -5,9 +5,6 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-
-//nb3amjtQWhSN6ibH
-
 const client = new MongoClient(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -63,7 +60,7 @@ app.get('/update', async (req, res) => {
   client.connect; 
   const collection = client.db("chillAppz").collection("drinkz");
   await collection.insertOne({ 
-    drink_name: "coldiessss"
+    drink_name: "coldiessss from the render app"
 })
 
 })
