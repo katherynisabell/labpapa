@@ -123,3 +123,22 @@ console.log('in the node console');
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${ PORT }`)
 })
+
+app.post('/updateDrink', async (req, res) => {
+
+  try {
+    // console.log("req.body: ", req.body) 
+    client.connect; 
+    const collection = client.db("chillAppz").collection("drinkz");
+    await collection.insertOne(req.body);
+      
+    res.redirect('/');
+  }
+  catch(e){
+    console.log(error)
+  }
+  finally{
+   // client.close()
+  }
+
+})
